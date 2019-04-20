@@ -6,7 +6,7 @@ export default {
   routes: [
     {
       tagname: 'common-code',
-      pageName: 'common_codes'
+      page: 'common_codes'
     }
   ],
   bootstrap
