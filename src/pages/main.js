@@ -24,4 +24,4 @@ class BaseCodeMain extends connect(store)(PageView) {
   }
 }
 
-window.customElements.define('base-code-main', BaseCodeMain)
+window.customElements.define('code-base-main', BaseCodeMain)
