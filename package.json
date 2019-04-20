@@ -1,5 +1,5 @@
 {
-  "name": "@things-factory/base-code",
+  "name": "@things-factory/code-base",
   "version": "0.1.2",
   "main": "src/index.js",
   "things-factory": true,
