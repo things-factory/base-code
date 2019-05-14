@@ -1,13 +1,5 @@
-import route from './src/route'
-import bootstrap from './src/bootstrap'
+import bootstrap from './client/bootstrap'
 
 export default {
-  route,
-  routes: [
-    {
-      tagname: 'common-code',
-      page: 'common_codes'
-    }
-  ],
   bootstrap
 }
