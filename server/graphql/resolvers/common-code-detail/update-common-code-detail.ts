@@ -6,7 +6,12 @@ export const updateCommonCodeDetail = {
     const repository = getRepository(CommonCodeDetail)
 
     const commonCodeDetail = await repository.findOne(
-      { id }
+      {
+        id
+      },
+      {
+        relations: ['parent']
+      }
     )
 
     return await repository.save({
