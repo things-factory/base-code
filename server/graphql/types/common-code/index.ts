@@ -1,6 +1,8 @@
+import { Filter, Pagination, Sorting } from '@things-factory/shell'
 import { CommonCode } from './common-code'
-import { NewCommonCode } from './new-common-code'
+import { CommonCodeList } from './common-code-list'
 import { CommonCodePatch } from './common-code-patch'
+import { NewCommonCode } from './new-common-code'
 
 export const Mutation = `
   createCommonCode (
@@ -22,8 +24,8 @@ export const Mutation = `
 `
 
 export const Query = `
-  commonCodes: [CommonCode]
+  commonCodes(filters: [Filter], pagination: Pagination, sortings: [Sorting]): CommonCodeList
   commonCode(id: String!): CommonCode
 `
 
-export const Types = [CommonCode, NewCommonCode, CommonCodePatch]
+export const Types = [Filter, Pagination, Sorting, CommonCode, NewCommonCode, CommonCodePatch, CommonCodeList]
