@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/code-base",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": true,
@@ -26,6 +26,6 @@
     "@things-factory/shell": "*"
   },
   "devDependencies": {
-    "@things-factory/resource-ui": "*"
+    "@things-factory/tester": "*"
   }
 }

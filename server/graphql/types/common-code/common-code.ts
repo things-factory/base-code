@@ -6,6 +6,6 @@ export const CommonCode = gql`
     name: String
     domain: Domain
     description: String
-    commonCodeDetails: CommonCodeDetail
+    commonCodeDetails: [CommonCodeDetail]
   }
 `
