@@ -3,4 +3,5 @@ node_modules/
 .vscode
 .editorconfig
 .prettierrc
-dist
+dist-server/
+dist-client/
