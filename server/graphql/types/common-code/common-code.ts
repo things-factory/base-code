@@ -10,5 +10,7 @@ export const CommonCode = gql`
     details: [CommonCodeDetail]
     creator: User
     updater: User
+    createdAt: String
+    updatedAt: String
   }
 `
