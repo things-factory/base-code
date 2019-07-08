@@ -10,22 +10,18 @@ export const Mutation = `
   ): CommonCode
 
   updateCommonCode (
-    id: String!
+    name: String!
     patch: CommonCodePatch!
   ): CommonCode
 
   deleteCommonCode (
-    id: String!
-  ): CommonCode
-
-  publishCommonCode (
-    id: String!
+    name: String!
   ): CommonCode
 `
 
 export const Query = `
   commonCodes(filters: [Filter], pagination: Pagination, sortings: [Sorting]): CommonCodeList
-  commonCode(id: String!): CommonCode
+  commonCode(name: String!): CommonCode
 `
 
 export const Types = [Filter, Pagination, Sorting, CommonCode, NewCommonCode, CommonCodePatch, CommonCodeList]

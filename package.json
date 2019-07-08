@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/code-base",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": true,
@@ -23,6 +23,7 @@
     "migration:revert": "node ./node_modules/typeorm/cli.js migration:revert"
   },
   "dependencies": {
+    "@things-factory/auth-base": "*",
     "@things-factory/shell": "*"
   },
   "devDependencies": {

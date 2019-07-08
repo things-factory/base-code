@@ -1,6 +1,7 @@
+import { User } from '@things-factory/auth-base'
+import { Domain, DomainBaseEntity } from '@things-factory/shell'
 import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { CommonCode } from './common-code'
-import { Domain, DomainBaseEntity } from '@things-factory/shell'
 
 @Entity('common-code-details')
 @Index(
@@ -30,4 +31,10 @@ export class CommonCodeDetail extends DomainBaseEntity {
 
   @Column('int')
   rank: number
+
+  @ManyToOne(type => User)
+  creator: User
+
+  @ManyToOne(type => User)
+  updater: User
 }

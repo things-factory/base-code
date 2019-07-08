@@ -7,27 +7,21 @@ import { NewCommonCodeDetail } from './new-common-code-detail'
 export const Mutation = `
   createCommonCodeDetail (
     commonCodeDetail: NewCommonCodeDetail!
-    groupId: String!
   ): CommonCodeDetail
 
   updateCommonCodeDetail (
-    id: String!
+    name: String!
     patch: CommonCodeDetailPatch!
   ): CommonCodeDetail
 
   deleteCommonCodeDetail (
-    id: String!
-  ): CommonCodeDetail
-
-  publishCommonCodeDetail (
-    id: String!
-    published: Boolean
+    name: String!
   ): CommonCodeDetail
 `
 
 export const Query = `
   commonCodeDetails(filters: [Filter], pagination: Pagination, sortings: [Sorting]): CommonCodeDetailList
-  commonCodeDetail(id: String!): CommonCodeDetail
+  commonCodeDetail(name: String!): CommonCodeDetail
 `
 
 export const Types = [

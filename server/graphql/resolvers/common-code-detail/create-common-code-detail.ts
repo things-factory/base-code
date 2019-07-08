@@ -1,16 +1,16 @@
-import uuid from 'uuid/v4'
-
 import { getRepository } from 'typeorm'
-import { CommonCodeDetail } from '../../../entities'
+import { CommonCode, CommonCodeDetail } from '../../../entities'
+import { common } from 'protobufjs'
 
 export const createCommonCodeDetail = {
-  async createCommonCodeDetail(_, { commonCodeDetail: attrs }) {
-    const repository = getRepository(CommonCodeDetail)
-    const newCommonCodeDetail = {
-      id: uuid(),
-      ...attrs
-    }
+  async createCommonCodeDetail(_: any, { commonCodeDetail }, context: any) {
+    commonCodeDetail.parent = await getRepository(CommonCode).findOne(commonCodeDetail.parent)
 
-    return await repository.save(newCommonCodeDetail)
+    return await getRepository(CommonCodeDetail).save({
+      domain: context.domain,
+      creatorId: context.state.user.id,
+      updaterId: context.state.user.id,
+      ...commonCodeDetail
+    })
   }
 }

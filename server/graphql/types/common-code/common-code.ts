@@ -3,9 +3,12 @@ import { gql } from 'apollo-server-koa'
 export const CommonCode = gql`
   type CommonCode {
     id: String
-    name: String
     domain: Domain
+    name: String
     description: String
-    commonCodeDetails: [CommonCodeDetail]
+    bundle: String
+    details: [CommonCodeDetail]
+    creator: User
+    updater: User
   }
 `

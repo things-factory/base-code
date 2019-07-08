@@ -4,5 +4,7 @@ export const CommonCodePatch = gql`
   input CommonCodePatch {
     name: String
     description: String
+    bundle: String
+    details: [String]
   }
 `

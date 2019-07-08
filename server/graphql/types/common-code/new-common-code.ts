@@ -5,5 +5,6 @@ export const NewCommonCode = gql`
     name: String!
     description: String
     bundle: String!
+    details: [String]
   }
 `
