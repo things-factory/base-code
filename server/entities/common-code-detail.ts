@@ -1,6 +1,6 @@
 import { User } from '@things-factory/auth-base'
-import { Domain, DomainBaseEntity } from '@things-factory/shell'
-import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { Domain } from '@things-factory/shell'
+import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import { CommonCode } from './common-code'
 
 @Entity('common-code-details')
@@ -13,7 +13,7 @@ import { CommonCode } from './common-code'
   commonCodeDetail.parent,
   commonCodeDetail.rank
 ])
-export class CommonCodeDetail extends DomainBaseEntity {
+export class CommonCodeDetail {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
@@ -32,9 +32,19 @@ export class CommonCodeDetail extends DomainBaseEntity {
   @Column('int')
   rank: number
 
-  @ManyToOne(type => User)
+  @ManyToOne(type => User, {
+    nullable: true
+  })
   creator: User
 
-  @ManyToOne(type => User)
+  @ManyToOne(type => User, {
+    nullable: true
+  })
   updater: User
+
+  @CreateDateColumn()
+  createdAt: Date
+
+  @UpdateDateColumn()
+  updatedAt: Date
 }
