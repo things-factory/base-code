@@ -3,7 +3,7 @@ import { Domain } from '@things-factory/shell'
 import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import { CommonCode } from './common-code'
 
-@Entity('common-code-details')
+@Entity()
 @Index(
   'ix_common_code_detail_0',
   (commonCodeDetail: CommonCodeDetail) => [commonCodeDetail.domain, commonCodeDetail.parent, commonCodeDetail.name],

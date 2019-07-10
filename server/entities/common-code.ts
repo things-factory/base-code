@@ -12,7 +12,7 @@ import {
 } from 'typeorm'
 import { CommonCodeDetail } from './common-code-detail'
 
-@Entity('common-codes')
+@Entity()
 @Index('ix_common_code_0', (commonCode: CommonCode) => [commonCode.domain, commonCode.name], { unique: true })
 @Index('ix_common_code_1', (commonCode: CommonCode) => [commonCode.domain, commonCode.bundle])
 export class CommonCode {
