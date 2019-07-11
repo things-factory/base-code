@@ -20,13 +20,13 @@ export class CommonCodeDetail {
   @ManyToOne(type => Domain)
   domain: Domain
 
-  @Column('text')
+  @Column()
   name: string
 
   @ManyToOne(type => CommonCode, commonCode => commonCode.details)
   parent: CommonCode
 
-  @Column('text')
+  @Column()
   description: string
 
   @Column('int')

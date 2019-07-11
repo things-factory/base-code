@@ -22,15 +22,15 @@ export class CommonCode {
   @ManyToOne(type => Domain)
   domain: Domain
 
-  @Column('text')
+  @Column()
   name: string
 
-  @Column('text', {
+  @Column({
     nullable: true
   })
   description: string
 
-  @Column('text')
+  @Column()
   bundle: string
 
   @OneToMany(type => CommonCodeDetail, commonCodeDetail => commonCodeDetail.parent)
