@@ -3,9 +3,9 @@ import { getRepository } from 'typeorm'
 import { CommonCodeDetail } from '../../../entities'
 
 export const commonCodeDetailsResolver = {
-  async commonCodeDetails(_: any, params: ListParam) {
+  async commonCodeDetails(_: any, params: ListParam, context: any) {
     const queryBuilder = getRepository(CommonCodeDetail).createQueryBuilder()
-    buildQuery(queryBuilder, params)
+    buildQuery(queryBuilder, params, context)
 
     const [items, total] = await queryBuilder
       .leftJoinAndSelect('CommonCodeDetail.domain', 'Domain')
