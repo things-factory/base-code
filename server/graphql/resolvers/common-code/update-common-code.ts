@@ -22,7 +22,7 @@ export const updateCommonCode = {
       ...commonCode,
       ...patch,
       details: await getRepository(CommonCodeDetail).findByIds(detailIds),
-      updaterId: context.state.user.id
+      updater: context.state.user
     })
   }
 }

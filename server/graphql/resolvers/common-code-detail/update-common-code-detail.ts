@@ -15,8 +15,8 @@ export const updateCommonCodeDetail = {
 
     return await repository.save({
       ...commonCodeDetail,
-      creatorId: context.state.user.id,
-      updaterId: context.state.user.id
+      creator: context.state.user,
+      updater: context.state.user
     })
   }
 }
