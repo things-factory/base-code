@@ -6,7 +6,6 @@ export const CommonCode = gql`
     domain: Domain
     name: String
     description: String
-    bundle: String
     details: [CommonCodeDetail]
     creator: User
     updater: User

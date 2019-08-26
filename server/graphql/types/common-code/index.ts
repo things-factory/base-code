@@ -1,4 +1,3 @@
-import { Filter, Pagination, Sorting } from '@things-factory/shell'
 import { CommonCode } from './common-code'
 import { CommonCodeList } from './common-code-list'
 import { CommonCodePatch } from './common-code-patch'
@@ -24,4 +23,4 @@ export const Query = `
   commonCode(name: String!): CommonCode
 `
 
-export const Types = [Filter, Pagination, Sorting, CommonCode, NewCommonCode, CommonCodePatch, CommonCodeList]
+export const Types = [CommonCode, NewCommonCode, CommonCodePatch, CommonCodeList]

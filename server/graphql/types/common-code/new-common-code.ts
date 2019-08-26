@@ -4,7 +4,6 @@ export const NewCommonCode = gql`
   input NewCommonCode {
     name: String!
     description: String
-    bundle: String!
     details: [String]
   }
 `

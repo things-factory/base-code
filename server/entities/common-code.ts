@@ -14,7 +14,7 @@ import { CommonCodeDetail } from './common-code-detail'
 
 @Entity()
 @Index('ix_common_code_0', (commonCode: CommonCode) => [commonCode.domain, commonCode.name], { unique: true })
-@Index('ix_common_code_1', (commonCode: CommonCode) => [commonCode.domain, commonCode.bundle])
+@Index('ix_common_code_1', (commonCode: CommonCode) => [commonCode.domain])
 export class CommonCode {
   @PrimaryGeneratedColumn('uuid')
   id: string
@@ -29,9 +29,6 @@ export class CommonCode {
     nullable: true
   })
   description: string
-
-  @Column()
-  bundle: string
 
   @OneToMany(type => CommonCodeDetail, commonCodeDetail => commonCodeDetail.parent)
   details: CommonCodeDetail[]
