@@ -7,7 +7,7 @@ export const createCommonCodeDetail = {
     commonCodeDetail.parent = await getRepository(CommonCode).findOne(commonCodeDetail.parent)
 
     return await getRepository(CommonCodeDetail).save({
-      domain: context.domain,
+      domain: context.state.domain,
       creator: context.state.user,
       updater: context.state.user,
       ...commonCodeDetail

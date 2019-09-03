@@ -8,7 +8,7 @@ export const createCommonCode = {
     }
 
     return await getRepository(CommonCode).save({
-      domain: context.domain,
+      domain: context.state.domain,
       creator: context.state.user,
       updater: context.state.user,
       ...commonCode

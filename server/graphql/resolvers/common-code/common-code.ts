@@ -6,7 +6,7 @@ export const commonCodeResolver = {
     const repository = getRepository(CommonCode)
 
     return await repository.findOne({
-      where: { domain: context.domain, name },
+      where: { domain: context.state.domain, name },
       relations: ['domain', 'details', 'creator', 'updater']
     })
   }

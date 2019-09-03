@@ -5,7 +5,7 @@ export const updateCommonCodeDetail = {
   async updateCommonCodeDetail(_: any, { name, patch }, context: any) {
     const repository = getRepository(CommonCodeDetail)
     const commonCodeDetail = await repository.findOne({
-      where: { domain: context.domain, name },
+      where: { domain: context.state.domain, name },
       relations: ['parent']
     })
 
