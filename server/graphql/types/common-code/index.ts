@@ -13,9 +13,17 @@ export const Mutation = `
     patch: CommonCodePatch!
   ): CommonCode
 
+  updateMultipleCommonCode (
+    patches: [CommonCodePatch]!
+  ): [CommonCode]
+
   deleteCommonCode (
     name: String!
-  ): CommonCode
+  ): Boolean
+
+  deleteCommonCodes (
+    names: [String]!
+  ): Boolean
 `
 
 export const Query = `
