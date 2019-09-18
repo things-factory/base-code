@@ -6,5 +6,6 @@ export const CommonCodeDetailPatch = gql`
     parent: String
     description: String
     rank: Int
+    cuFlag: String
   }
 `

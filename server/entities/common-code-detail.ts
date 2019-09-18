@@ -29,7 +29,7 @@ export class CommonCodeDetail {
   @Column()
   description: string
 
-  @Column('int')
+  @Column()
   rank: number
 
   @ManyToOne(type => User, {
