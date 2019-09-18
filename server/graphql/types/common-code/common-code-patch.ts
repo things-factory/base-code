@@ -5,5 +5,6 @@ export const CommonCodePatch = gql`
     name: String
     description: String
     details: [String]
+    cuFlag: String
   }
 `
