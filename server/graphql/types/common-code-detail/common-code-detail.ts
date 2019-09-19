@@ -5,7 +5,7 @@ export const CommonCodeDetail = gql`
     id: String
     domain: Domain
     name: String
-    parent: CommonCode
+    commoncode: CommonCode
     description: String
     rank: Int
     creator: User

@@ -30,7 +30,7 @@ export class CommonCode {
   })
   description: string
 
-  @OneToMany(type => CommonCodeDetail, commonCodeDetail => commonCodeDetail.parent)
+  @OneToMany(type => CommonCodeDetail, commonCodeDetail => commonCodeDetail.commonCode)
   details: CommonCodeDetail[]
 
   @ManyToOne(type => User, {

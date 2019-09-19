@@ -6,13 +6,9 @@ import { CommonCode } from './common-code'
 @Entity()
 @Index(
   'ix_common_code_detail_0',
-  (commonCodeDetail: CommonCodeDetail) => [commonCodeDetail.domain, commonCodeDetail.parent, commonCodeDetail.name],
+  (commonCodeDetail: CommonCodeDetail) => [commonCodeDetail.domain, commonCodeDetail.name],
   { unique: true }
 )
-@Index('ix_common_code_detail_1', (commonCodeDetail: CommonCodeDetail) => [
-  commonCodeDetail.parent,
-  commonCodeDetail.rank
-])
 export class CommonCodeDetail {
   @PrimaryGeneratedColumn('uuid')
   id: string
@@ -20,11 +16,11 @@ export class CommonCodeDetail {
   @ManyToOne(type => Domain)
   domain: Domain
 
+  @ManyToOne(type => CommonCode)
+  commonCode: CommonCode
+
   @Column()
   name: string
-
-  @ManyToOne(type => CommonCode, commonCode => commonCode.details)
-  parent: CommonCode
 
   @Column()
   description: string

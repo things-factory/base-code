@@ -9,7 +9,7 @@ export const commonCodeDetailsResolver = {
 
     const [items, total] = await queryBuilder
       .leftJoinAndSelect('CommonCodeDetail.domain', 'Domain')
-      .leftJoinAndSelect('CommonCodeDetail.parent', 'Parent')
+      .leftJoinAndSelect('CommonCodeDetail.commoncode', 'CommonCode')
       .leftJoinAndSelect('CommonCodeDetail.creator', 'Creator')
       .leftJoinAndSelect('CommonCodeDetail.updater', 'Updater')
       .getManyAndCount()

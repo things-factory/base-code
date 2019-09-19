@@ -3,19 +3,15 @@ import { CommonCode, CommonCodeDetail } from '../../../entities'
 
 export const updateCommonCodeDetail = {
   async updateCommonCodeDetail(_: any, { name, patch }, context: any) {
-    const repository = getRepository(CommonCodeDetail)
-    const commonCodeDetail = await repository.findOne({
-      where: { domain: context.state.domain, name },
-      relations: ['parent']
-    })
+    const commonCodeDetail = await getRepository(CommonCodeDetail).findOne({ domain: context.state.domain, name })
 
-    if (patch.parent) {
-      commonCodeDetail.parent = await getRepository(CommonCode).findOne(commonCodeDetail.parent)
+    if (patch.commoncode && patch.commoncode.id) {
+      patch.commoncode = await getRepository(CommonCode).findOne(patch.commoncode.id)
     }
 
-    return await repository.save({
+    return await getRepository(CommonCodeDetail).save({
       ...commonCodeDetail,
-      creator: context.state.user,
+      ...patch,
       updater: context.state.user
     })
   }

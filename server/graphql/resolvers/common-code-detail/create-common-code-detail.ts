@@ -1,10 +1,11 @@
 import { getRepository } from 'typeorm'
 import { CommonCode, CommonCodeDetail } from '../../../entities'
-import { common } from 'protobufjs'
 
 export const createCommonCodeDetail = {
   async createCommonCodeDetail(_: any, { commonCodeDetail }, context: any) {
-    commonCodeDetail.parent = await getRepository(CommonCode).findOne(commonCodeDetail.parent)
+    if (commonCodeDetail && commonCodeDetail.commoncode.id) {
+      commonCodeDetail.commoncode = await getRepository(CommonCode).findOne(commonCodeDetail.commoncode.id)
+    }
 
     return await getRepository(CommonCodeDetail).save({
       domain: context.state.domain,
