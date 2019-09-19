@@ -3,8 +3,8 @@ import { CommonCode, CommonCodeDetail } from '../../../entities'
 
 export const createCommonCodeDetail = {
   async createCommonCodeDetail(_: any, { commonCodeDetail }, context: any) {
-    if (commonCodeDetail && commonCodeDetail.commoncode.id) {
-      commonCodeDetail.commoncode = await getRepository(CommonCode).findOne(commonCodeDetail.commoncode.id)
+    if (commonCodeDetail && commonCodeDetail.commonCode.id) {
+      commonCodeDetail.commonCode = await getRepository(CommonCode).findOne(commonCodeDetail.commonCode.id)
     }
 
     return await getRepository(CommonCodeDetail).save({

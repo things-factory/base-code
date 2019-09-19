@@ -5,7 +5,7 @@ export const commonCodeDetailResolver = {
   async commonCodeDetail(_: any, { name }, context: any) {
     return await getRepository(CommonCodeDetail).findOne({
       where: { domain: context.state.domain, name },
-      relations: ['domain', 'commoncode', 'creator', 'updater']
+      relations: ['domain', 'commonCode', 'creator', 'updater']
     })
   }
 }

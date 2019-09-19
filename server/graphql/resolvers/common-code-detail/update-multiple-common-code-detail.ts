@@ -7,14 +7,14 @@ export const updateMultipleCommonCodeDetail = {
     const _createRecords = patches.filter((patch: any) => patch.cuFlag.toUpperCase() === '+')
     const _updateRecords = patches.filter((patch: any) => patch.cuFlag.toUpperCase() === 'M')
     const commonCodeDetailRepo = getRepository(CommonCodeDetail)
-    const commoncodeRepo = getRepository(CommonCode)
+    const commonCodeRepo = getRepository(CommonCode)
 
     if (_createRecords.length > 0) {
       for (let i = 0; i < _createRecords.length; i++) {
         const newRecord = _createRecords[i]
 
-        if (newRecord.commoncode && newRecord.commoncode.id) {
-          newRecord.commoncode = await commoncodeRepo.findOne(newRecord.commoncode.id)
+        if (newRecord.commonCode && newRecord.commonCode.id) {
+          newRecord.commonCode = await commonCodeRepo.findOne(newRecord.commonCode.id)
         }
 
         const result = await commonCodeDetailRepo.save({
@@ -33,8 +33,8 @@ export const updateMultipleCommonCodeDetail = {
         const newRecord = _updateRecords[i]
         const commonCodeDetail = await commonCodeDetailRepo.findOne(newRecord.id)
 
-        if (newRecord.commoncode && newRecord.commoncode.id) {
-          newRecord.commoncode = await commoncodeRepo.findOne(newRecord.commoncode.id)
+        if (newRecord.commonCode && newRecord.commonCode.id) {
+          newRecord.commonCode = await commonCodeRepo.findOne(newRecord.commonCode.id)
         }
 
         const result = await commonCodeDetailRepo.save({
