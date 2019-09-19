@@ -10,5 +10,7 @@ export const CommonCodeDetail = gql`
     rank: Int
     creator: User
     updater: User
+    createdAt: String
+    updatedAt: String
   }
 `
