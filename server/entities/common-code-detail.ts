@@ -6,7 +6,12 @@ import { CommonCode } from './common-code'
 @Entity()
 @Index(
   'ix_common_code_detail_0',
-  (commonCodeDetail: CommonCodeDetail) => [commonCodeDetail.domain, commonCodeDetail.name],
+  (commonCodeDetail: CommonCodeDetail) => [commonCodeDetail.domain, commonCodeDetail.commonCode, commonCodeDetail.name],
+  { unique: true }
+)
+@Index(
+  'ix_common_code_detail_1',
+  (commonCodeDetail: CommonCodeDetail) => [commonCodeDetail.commonCode, commonCodeDetail.rank],
   { unique: true }
 )
 export class CommonCodeDetail {
