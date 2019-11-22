@@ -18,11 +18,11 @@ export const Mutation = `
   ): [CommonCodeDetail]
 
   deleteCommonCodeDetail (
-    name: String!
+    id: String!
   ): Boolean
 
   deleteCommonCodeDetails (
-    names: [String]!
+    ids: [String]!
   ): Boolean
 `
 
