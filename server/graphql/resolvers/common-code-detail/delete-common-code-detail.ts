@@ -7,11 +7,6 @@ export const deleteCommonCodeDetail = {
   }
 }
 
-export async function deleteCodeDetail(id: string | number): Promise<Boolean> {
-  try {
-    await getRepository(CommonCodeDetail).delete(id)
-    return true
-  } catch {
-    return false
-  }
+export async function deleteCodeDetail(id: string | number): Promise<void> {
+  await getRepository(CommonCodeDetail).delete(id)
 }
