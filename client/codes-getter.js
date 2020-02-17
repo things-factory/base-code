@@ -1,5 +1,6 @@
 import gql from 'graphql-tag'
-import { client, gqlBuilder } from '@things-factory/shell'
+import { client } from '@things-factory/shell'
+import { gqlBuilder } from '@things-factory/utils'
 
 export const getCodeByName = async function(name) {
   if (!name) throw new Error('name is undefined')
